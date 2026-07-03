@@ -14,9 +14,7 @@ int main()
     cin >> L;
     cin >> Q;
 
-    int diff[N+2];
-    memset(diff, 0, sizeof(diff));
-    
+    vector<int> diff(N + 2, 0);
     for (int i = 0; i < L; i++)
     {
         int P, S;
@@ -27,8 +25,7 @@ int main()
         diff[rb+1] -= 1;
     }
 
-    int parking[N+1];
-    parking[0] = 0;
+    vector<int> parking(N + 1, 0);
     for (int i = 1; i <= N; i++)
     {
         parking[i] = parking[i-1] + diff[i];
