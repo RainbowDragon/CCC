@@ -18,8 +18,8 @@ while i < len(N) and j < len(M):
         i += 1
         j += 1
     else:
-        pair = N[i] + M[j]
-        if pair in ("RG", "GB", "BR"):
+        cN, cM = N[i], M[j]
+        if (cN == 'R' and cM == 'G') or (cN == 'G' and cM == 'B') or (cN == 'B' and cM == 'R'):
             n += 1
             j += 1
         else:
