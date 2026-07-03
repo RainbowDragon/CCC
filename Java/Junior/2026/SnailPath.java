@@ -15,7 +15,7 @@ public class Main {
 
         int M = Integer.parseInt(br.readLine());
 
-        HashSet<String> set = new HashSet<>();
+        HashSet<Long> set = new HashSet<>();
         int x = 0;
         int y = 0;
         set.add(encode(x, y));
@@ -62,7 +62,7 @@ public class Main {
         System.out.println(count);
     }
 
-    static String encode (int x, int y) {
-        return "" + x + " " + y; 
+    static long encode (int x, int y) {
+        return ((long) x << 32) | (y & 0xFFFFFFFFL);
     }
 }
