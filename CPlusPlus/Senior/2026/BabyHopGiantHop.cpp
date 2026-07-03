@@ -7,21 +7,23 @@
 
 using namespace std;
 
+typedef long long ll;
+
 int main()
 {
-    long long A, B, K;
+    ll A, B, K;
     int T;
     cin >> A;
     cin >> B;
     cin >> K;
     cin >> T;
 
-    long long distance = llabs(B - A);
+    ll distance = llabs(B - A);
 
-    long long Q = distance / K;
-    long long R = distance % K;
-    long long s1 = Q + R;
-    long long s2 = (Q + 1) + (K - R);
+    ll Q = distance / K;
+    ll R = distance % K;
+    ll s1 = Q + R;
+    ll s2 = (Q + 1) + (K - R);
 
     if (distance == 0)
     {
@@ -36,8 +38,8 @@ int main()
     }
     else
     {
-        long long min1 = min(s1, s2);
-        long long min2 = max(s1, s2);
+        ll min1 = min(s1, s2);
+        ll min2 = max(s1, s2);
         if (T == 1)
         {
             cout << min1 << endl;
