@@ -19,7 +19,10 @@ int main()
     int i = 0; 
     int j = 0;
 
-    while (i < N.length() && j < M.length())
+    int lenN = N.length();
+    int lenM = M.length();
+
+    while (i < lenN && j < lenM)
     {
         if (N[i] == M[j]) 
         {
@@ -30,11 +33,7 @@ int main()
         }
         else 
         {
-            string str;
-            str += N[i];
-            str += M[j];
-
-            if (str == "RG" || str == "GB" || str == "BR")
+            if ((N[i] == 'R' && M[j] == 'G') || (N[i] == 'G' && M[j] == 'B') || (N[i] == 'B' && M[j] == 'R'))
             {
                 n++;
                 j++;
@@ -47,14 +46,14 @@ int main()
         }
     }
 
-    if (i < N.length())
+    if (i < lenN)
     {
-        n += N.length() - i;
+        n += lenN - i;
     }
 
-    if (j < M.length())
+    if (j < lenM)
     {
-        m += M.length() - j;
+        m += lenM - j;
     }
 
     cout << n << endl;
