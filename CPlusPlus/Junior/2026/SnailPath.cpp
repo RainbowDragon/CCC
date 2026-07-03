@@ -7,20 +7,21 @@
 
 using namespace std;
 
-string encode(int x, int y)
-{
-    return to_string(x) + " " + to_string(y);
-}
+struct PairHash {
+    size_t operator()(const pair<int, int>& p) const {
+        return ((long long)p.first << 32) | (p.second & 0xFFFFFFFFFFFFFFFL);
+    }
+};
 
 int main()
 {
     int M;
     cin >> M;
 
-    unordered_set<string> set;
+    unordered_set<pair<int, int>, PairHash> visited;
     int x = 0;
     int y = 0;
-    set.insert(encode(x, y));
+    visited.insert({x, y});
     
     int count = 0;
 
@@ -55,13 +56,15 @@ int main()
         {
             x += dx;
             y += dy;
-            if (set.find(encode(x,y)) != set.end())
+            pair<int, int> cur_pos = {x, y};
+
+            if (visited.find(cur_pos) != visited.end())
             {
                 count++;
             }
             else
             {
-                set.insert(encode(x,y));
+                visited.insert(cur_pos);
             }
         }
     }
