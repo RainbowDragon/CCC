@@ -24,16 +24,16 @@ public class Main {
 
         while (i < N.length() && j < M.length())
         {
-            if (N.charAt(i) == M.charAt(j)) {
+            char cN = N.charAt(i);
+            char cM = M.charAt(j);
+            if (cN == cM) {
                 n++;
                 m++;
                 i++;
                 j++;
             }
             else {
-                String str = "" + N.charAt(i) + M.charAt(j);
-
-                if (str.equals("RG") || str.equals("GB") || str.equals("BR")) {
+                if ((cN == 'R' && cM == 'G') || (cN == 'G' && cM == 'B') || (cN == 'B' && cM == 'R')) {
                     n++;
                     j++;
                 }
