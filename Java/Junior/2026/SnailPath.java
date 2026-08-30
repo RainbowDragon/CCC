@@ -48,12 +48,10 @@ public class Main {
             {
                 x += dx;
                 y += dy;
-                if (set.contains(encode(x, y)))
-                {
+                if (set.contains(encode(x, y))) {
                     count++;
                 }
-                else
-                {
+                else {
                     set.add(encode(x,y));
                 }
             }
