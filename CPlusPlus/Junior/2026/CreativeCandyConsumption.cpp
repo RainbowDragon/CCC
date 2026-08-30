@@ -15,7 +15,6 @@ int main()
 
     int n = 0;
     int m = 0;
-
     int i = 0; 
     int j = 0;
 
