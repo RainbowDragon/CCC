@@ -7,8 +7,10 @@
 
 using namespace std;
 
-struct PairHash {
-    size_t operator()(const pair<int, int>& p) const {
+struct PairHash 
+{
+    size_t operator()(const pair<int, int>& p) const 
+    {
         return ((long long)p.first << 32) | (p.second & 0xFFFFFFFFFFFFFFFL);
     }
 };
